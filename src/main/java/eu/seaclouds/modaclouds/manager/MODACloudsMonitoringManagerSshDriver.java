@@ -29,7 +29,6 @@ import com.google.common.collect.ImmutableMap;
 import brooklyn.entity.basic.Attributes;
 import brooklyn.entity.basic.Entities;
 import brooklyn.entity.java.JavaSoftwareProcessSshDriver;
-import brooklyn.entity.monitoring.modaclouds.manager.MODACloudsMonitoringManager;
 import brooklyn.location.basic.SshMachineLocation;
 import brooklyn.util.collections.MutableMap;
 import brooklyn.util.net.Networking;
