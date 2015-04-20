@@ -19,7 +19,6 @@
 package eu.seaclouds.modaclouds.dda;
 
 import brooklyn.entity.basic.SoftwareProcessImpl;
-import brooklyn.entity.monitoring.modaclouds.dda.MODACloudsDeterministicDataAnalizerDriver;
 
 public class MODACloudsDeterministicDataAnalyzerImpl extends SoftwareProcessImpl implements MODACloudsDeterministicDataAnalyzer {
 

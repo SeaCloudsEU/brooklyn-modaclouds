@@ -96,17 +96,18 @@ public class MODACloudsMonitoringManagerSshDriver extends JavaSoftwareProcessSsh
                                 "-kbpath %s " +
                                 "-mmport %s " +
                                 "> %s 2>&1 &",
-                        entity.getConfig(brooklyn.entity.monitoring.modaclouds.manager.MODACloudsMonitoringManager.MODACLOUDS_DDA_IP),
-                        entity.getConfig(brooklyn.entity.monitoring.modaclouds.manager.MODACloudsMonitoringManager.MODACLOUDS_DDA_PORT),
-                        entity.getConfig(brooklyn.entity.monitoring.modaclouds.manager.MODACloudsMonitoringManager.MODACLOUDS_KB_IP),
-                        entity.getConfig(brooklyn.entity.monitoring.modaclouds.manager.MODACloudsMonitoringManager.MODACLOUDS_KB_PORT),
-                        entity.getConfig(brooklyn.entity.monitoring.modaclouds.manager.MODACloudsMonitoringManager.MODACLOUDS_KB_DATASET_PATH),
-                        entity.getAttribute(brooklyn.entity.monitoring.modaclouds.manager.MODACloudsMonitoringManager.MODACLOUDS_MM_PORT),
+                        entity.getConfig(MODACloudsMonitoringManager.MODACLOUDS_DDA_IP),
+                        entity.getConfig(MODACloudsMonitoringManager.MODACLOUDS_DDA_PORT),
+                        entity.getConfig(MODACloudsMonitoringManager.MODACLOUDS_KB_IP),
+                        entity.getConfig(MODACloudsMonitoringManager.MODACLOUDS_KB_PORT),
+                        entity.getConfig(MODACloudsMonitoringManager.MODACLOUDS_KB_DATASET_PATH),
+                        entity.getAttribute(MODACloudsMonitoringManager.MODACLOUDS_MM_PORT),
                         getLogFileLocation()))
                 .execute();
 
-        String mainUri = String.format("http://%s:%d", entity.getAttribute(Attributes.HOSTNAME), entity.getAttribute
-                (brooklyn.entity.monitoring.modaclouds.manager.MODACloudsMonitoringManager.MODACLOUDS_MM_PORT));
+        String mainUri = String.format("http://%s:%d",
+                entity.getAttribute(Attributes.HOSTNAME),
+                entity.getAttribute(MODACloudsMonitoringManager.MODACLOUDS_MM_PORT));
         entity.setAttribute(Attributes.MAIN_URI, URI.create(mainUri));
     }
 

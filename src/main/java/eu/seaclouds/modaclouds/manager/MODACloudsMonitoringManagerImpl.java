@@ -20,11 +20,11 @@ package eu.seaclouds.modaclouds.manager;
 
 import brooklyn.entity.basic.SoftwareProcessImpl;
 
-public class MODACloudsMonitoringManagerImpl extends SoftwareProcessImpl implements brooklyn.entity.monitoring.modaclouds.manager.MODACloudsMonitoringManager {
+public class MODACloudsMonitoringManagerImpl extends SoftwareProcessImpl implements MODACloudsMonitoringManager {
 
    @Override
    public Class getDriverInterface() {
-      return eu.seaclouds.modaclouds.manager.MODACloudsMonitoringManagerDriver.class;
+      return MODACloudsMonitoringManagerDriver.class;
    }
 
    @Override

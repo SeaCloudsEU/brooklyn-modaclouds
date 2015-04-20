@@ -34,7 +34,7 @@ import brooklyn.util.net.Networking;
 import brooklyn.util.os.Os;
 import brooklyn.util.ssh.BashCommands;
 
-public class MODACloudsDeterministicDataAnalizerSshDriver extends JavaSoftwareProcessSshDriver implements brooklyn.entity.monitoring.modaclouds.dda.MODACloudsDeterministicDataAnalizerDriver {
+public class MODACloudsDeterministicDataAnalizerSshDriver extends JavaSoftwareProcessSshDriver implements MODACloudsDeterministicDataAnalizerDriver {
 
    public MODACloudsDeterministicDataAnalizerSshDriver(MODACloudsDeterministicDataAnalyzerImpl entity, SshMachineLocation machine) {
       super(entity, machine);

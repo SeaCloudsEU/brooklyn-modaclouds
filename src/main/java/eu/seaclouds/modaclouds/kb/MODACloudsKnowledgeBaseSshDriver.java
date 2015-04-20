@@ -28,7 +28,6 @@ import com.google.common.collect.ImmutableMap;
 import brooklyn.entity.basic.Attributes;
 import brooklyn.entity.basic.Entities;
 import brooklyn.entity.java.JavaSoftwareProcessSshDriver;
-import brooklyn.entity.monitoring.modaclouds.kb.MODACloudsKnowledgeBase;
 import brooklyn.location.basic.SshMachineLocation;
 import brooklyn.util.collections.MutableMap;
 import brooklyn.util.net.Networking;
@@ -37,7 +36,7 @@ import brooklyn.util.ssh.BashCommands;
 
 public class MODACloudsKnowledgeBaseSshDriver extends JavaSoftwareProcessSshDriver implements MODACloudsKnowledgeBaseDriver {
 
-   public MODACloudsKnowledgeBaseSshDriver(eu.seaclouds.modaclouds.kb.MODACloudsKnowledgeBaseImpl entity, SshMachineLocation machine) {
+   public MODACloudsKnowledgeBaseSshDriver(MODACloudsKnowledgeBaseImpl entity, SshMachineLocation machine) {
       super(entity, machine);
    }
 
@@ -91,12 +90,14 @@ public class MODACloudsKnowledgeBaseSshDriver extends JavaSoftwareProcessSshDriv
 
 
                format("nohup java -jar fuseki-server.jar --update --port %s --loc %s %s > %s 2>&1 &",
-               entity.getAttribute(brooklyn.entity.monitoring.modaclouds.kb.MODACloudsKnowledgeBase.MODACLOUDS_KB_PORT),
-               entity.getConfig(brooklyn.entity.monitoring.modaclouds.kb.MODACloudsKnowledgeBase.MODACLOUDS_KB_DATASTORE_FOLDER),
-                       entity.getAttribute(brooklyn.entity.monitoring.modaclouds.kb.MODACloudsKnowledgeBase.MODACLOUDS_KB_PATH),
+               entity.getAttribute(MODACloudsKnowledgeBase.MODACLOUDS_KB_PORT),
+               entity.getConfig(MODACloudsKnowledgeBase.MODACLOUDS_KB_DATASTORE_FOLDER),
+                       entity.getAttribute(MODACloudsKnowledgeBase.MODACLOUDS_KB_PATH),
                getLogFileLocation()))
               .execute();
-      String mainUri = String.format("http://%s:%d", entity.getAttribute(Attributes.HOSTNAME), entity.getAttribute(brooklyn.entity.monitoring.modaclouds.kb.MODACloudsKnowledgeBase.MODACLOUDS_KB_PORT));
+      String mainUri = String.format("http://%s:%d",
+              entity.getAttribute(Attributes.HOSTNAME),
+              entity.getAttribute(MODACloudsKnowledgeBase.MODACLOUDS_KB_PORT));
       entity.setAttribute(Attributes.MAIN_URI, URI.create(mainUri));
    }
 
@@ -112,7 +113,7 @@ public class MODACloudsKnowledgeBaseSshDriver extends JavaSoftwareProcessSshDriv
 
    @Override
    public Integer getPort() {
-      return entity.getAttribute(brooklyn.entity.monitoring.modaclouds.kb.MODACloudsKnowledgeBase.MODACLOUDS_KB_PORT);
+      return entity.getAttribute(MODACloudsKnowledgeBase.MODACLOUDS_KB_PORT);
    }
 
    @Override
