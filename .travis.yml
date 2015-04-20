@@ -8,5 +8,5 @@ branches:
     - travis
 env:
   global:
-    - secure: "q6oLIb4TpyVxy6jcauijVcGkkTr3xe5dfcII5yJs48r2FzcZeAYqPvifb9G9tlOiK5igXJrEa2GmNytlI9NijOIAt8BBV34xIovwkupwJ9qGAxG2E5hHbAjGiRaICTglkH+psgaPuPe4W8UgmWCSNt9bM12F1bVHsXXftWx/880="
-    - secure: "VYSXB7Myuqbkyt9vjiro09R6e44G2xAie8Q8lYfJreghp7kTIUeH3cCY9gMRb8pMiYadVtF01hzJWaf6PaApScNivmMUkvzGGvfnRX1FbBoxL9CIhkZkmofoyvqiobE4moZpDl6wje7APAch2b/D9Q
+    - secure: "j/n0lLFSsSIbSN6EywHOrG+v+CwIuHNRXOliYExdvuJBmc2M4sCsAFAVVb4BoYeBU4PUA5YZ0J6bc+oTajXgIiTdCL8OuEFkq+t4j2P+kLQCKTl/hYnamdksyVKjs616gL3Oe1BLRFWJKGTN6FvWKH5bOgcI08priHN36u/hL1w="
+    - secure: "O+TCNcfvT9N51kkKmN7bvKvDXRvtei1NxF4PALFdOPSDiqaj4hsC26wg9TKP0+ulmVP6nq2znOG2Pe2G+keYBPaE/tKJiem0bb1ZCeZtGhrtoChYfyt+TJlqLf63OiBcOWF934eJ+p9fSkDnNMbsv6e6ngaV1L1E74Sm876XyxA="
