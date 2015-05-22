@@ -52,7 +52,6 @@ public interface MODACloudsKnowledgeBase extends SoftwareProcess, HasShortName {
    @SetFromFlag("modacloudsKnowledgeBasePath")
    BasicAttributeSensorAndConfigKey<String> MODACLOUDS_KB_PATH = new StringAttributeSensorAndConfigKey("modaclouds.kb.path", "MODAClouds Knowledge Base", "/modaclouds/kb");
 
-
    @SetFromFlag("modacloudsKnowledgeBaseDatastore")
    ConfigKey<String> MODACLOUDS_KB_DATASTORE_FOLDER = ConfigKeys.newStringConfigKey("modaclouds.kb.datastore",
            "MODAClouds Knowledge Base Datastore", "/tmp");
